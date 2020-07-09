@@ -1,21 +1,26 @@
-/**index.wxss**/
-.userinfo {
+page{
+  height:100%;
+  background-image: url(https://cloud-minapp-36203.cloud.ifanrusercontent.com/1jtBK5ssppEjZDib.jpg);
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+}
+
+.content{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column;/*垂直布防*/
+  align-items: center; /*位置居中*/
+  color: black ;
+  }
+  
+.primay{            /*按钮布局*/
+  margin-top: 750rpx;        /*按钮垂直高度*/
+  border: 5px solid #C8141F;       /*边框粗细和颜色*/
+  border-radius: 10px;         /*弧度*/
+  padding: 10px 10px;      /*边框到内部字体间距*/
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.primay-text{
+  font-size: 50rpx;
 }
 
-.userinfo-nickname {
-  color: #aaa;
-}
 
-.usermotto {
-  margin-top: 200px;
-}

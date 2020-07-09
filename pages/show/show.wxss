@@ -1,0 +1,7 @@
+/* pages/show/show.wxss */
+.content{
+  display: flex;
+  flex-direction: column;/*垂直布防*/
+  align-items: center; /*位置居中*/
+  color: black ;
+  }

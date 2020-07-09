@@ -1,0 +1,26 @@
+<view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+        <!-- 搜索框 -->
+        <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input" placeholder="请输入搜索内容" bindinput="Input" value="{{Input}}"/>
+            <image src='../../resource/icon/icon_close@2x.png' class='clean_btn' bindtap='clean_input'></image>
+        </view>
+    </view>
+        <!-- 搜索按钮,调用搜索查询方法 -->
+    <view class="weui-search-bar__cancel-btn" bindtap='Search'>搜索</view>
+</view>
+
+<scroll-view class='scr' scroll-y="true" style='height:100%'>
+    <block wx:for="{{SearchData}}" wx:key="true" id="item" >    
+        <navigator id="{{ item.id }}" url="../show/show?id={{ item.id }}">
+            <view class="item {{item.display?'item2':''}}" data-index="{{index}}">
+                <image style='margin-top:2px' class='imageone' src="{{item.logo}}"></image>
+                <text>{{item.title}}</text>
+                <image style='margin-top:10px' data-index="{{index}}" bindtap="openLocation" class='imagetwo' src="../../resource/icon/r.png"></image>
+            </view> 
+        </navigator> 
+    </block> 
+</scroll-view>
+ 
+        

@@ -1,0 +1,86 @@
+/* pages/Search/Search.wxss */
+.weui-search-bar {
+  position: relative;
+  padding: 8px 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #EFEFF4;
+  border-top: 1rpx solid #D7D6DC;
+  border-bottom: 1rpx solid #D7D6DC;
+}
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
+.weui-search-bar__form {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+          flex: auto;
+  border-radius: 5px;
+  background: #FFFFFF;
+  border: 1rpx solid #E6E6EA;
+}
+.weui-search-bar__box {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.weui-search-bar__input {
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+}
+.weui-search-bar__cancel-btn {
+  margin-left: 10px;
+  line-height: 28px;
+  color: rgb(187, 7, 7);
+  white-space: nowrap;
+}
+
+.clean_btn{
+  position: absolute;
+  right: 25rpx;
+  top:10rpx;
+  width: 35rpx;
+  height: 35rpx;
+  z-index: 999;
+}
+
+.scr{
+  position: relative;
+  height: 100%
+}
+.item{
+  height: 55px;
+  border-bottom:1px solid #D3D3D3;
+}
+.item2{
+  height: 55px;
+  border-bottom:1px solid #D3D3D3;
+  background-color: #D3D3D3;
+}
+.item text{
+  margin-left: 15px;
+  position: relative;
+  bottom: 28rpx;
+  font-weight: normal;
+  font-size: 16px;
+}
+.imageone{
+  margin-left: 15rpx;
+  width: 80px;
+  height: 50px;
+}
+.imagetwo{
+  position: absolute; 
+  right: 30rpx;
+  height: 30px;
+  width: 30px;
+}

@@ -99,10 +99,10 @@ Page({
     //遍历所有的markers，相同ID的进行变换
     markers.forEach(item=>{
       if(item.id == markerId){
-        item.iconPath = "../../resource/icon/" + categoryID + "choosed@3x.png"
+        item.iconPath = "../../resource/icon/green.png"
       }
       else{
-        item.iconPath = "../../resource/icon/" + categoryID + "@3x.png"
+        item.iconPath = "../../resource/icon/red.png"
       }
       //更新地图上的标记点数据
       this.setData({
@@ -148,7 +148,7 @@ Page({
           title: item.title,
           latitude: item.latitude,
           longitude: item.longitude,
-          iconPath: '../../resource/icon/' + categoryID + '@3x.png',
+          iconPath: '../../resource/icon/red.png',
           width: 32,
           height: 40
         }
@@ -170,7 +170,7 @@ Page({
 
   navigateToSearch: function() {
     wx.navigateTo({
-        url: "../lbsSearch/lbsSearch"
+        url: "../Search/Search"
     });
   },
 

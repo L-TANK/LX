@@ -1,4 +1,15 @@
 <!--pages/show/show.wxml-->
 <view class="content">
   <text>{{title}}</text>
+  <view>
+     <label class="primay-{{stop ? 'red':'green'}}">{{h}}:{{m}}:{{s}}</label>
+  </view>
+  <view class="primay{{!stop ? '2':'3'}}" bindtap="stop_star">
+    <text class="primay-text">{{button_text}}</text>
+  </view>
+  <view class="primay"> 
+    <text class="primay-green">文明行车</text>
 </view>
+</view>
+
+

@@ -1,1 +1,218 @@
 /* pages/maps/maps.wxss */
+/* pages/lbsIndex/lbsIndex.wxss */
+
+/* 顶部地图分类导航 */
+
+.top-lbs {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  min-width: 100%;
+  background:#ffffff;
+  color: #C8141F;
+}
+
+.top-lbs__items{
+  position: relative;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  padding: 0rpx 20rpx;
+  width: 100vw;
+  line-height: 100rpx;
+}
+
+.top-list-item{
+  display: inline-block;
+}
+
+.top-list-item__title {
+  display: inline-block;
+  margin-right: 40rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  font-weight: 500;
+  font-family: 'iconfont';
+  line-height: 70rpx;
+  height: 70rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  white-space: nowrap;
+  font-weight: 200;
+}
+
+.active-top-border {
+  border-bottom: 4rpx solid #C8141F;
+}
+
+map {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 100rpx;
+  left: 0;
+  right: 0;
+  bottom: 69rpx;
+}
+
+.map--has-merchant-list {
+  bottom: 399rpx;
+}
+
+.lbs-merchants {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  background: #fff;
+}
+
+.lbs-merchants.merchants-items-hidden {
+  bottom: 0;
+}
+
+.lbs-merchants__record {
+  letter-spacing: 10rpx;
+  border-bottom: 1rpx solid #eee;
+  width: 100vw;
+  padding: 20rpx 0;
+  text-align: center;
+  font-size: 24rpx;
+  color: #C8141F;
+}
+
+.lbs-merchants__toggle {
+  font-size: 20rpx;
+  display: inline-block;
+}
+
+.lbs-merchants__items {
+  position: relative;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  padding: 20rpx 20rpx;
+  width: 100vw;
+}
+
+.list-item,
+.list-item__img {
+  display: inline-block;
+}
+
+.list-item {
+  margin-right: 20rpx;
+}
+
+.list-item__title {
+  display: block;
+  width: 280rpx;
+  box-sizing: border-box;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  line-height: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  white-space: nowrap;
+  font-weight: 200;
+}
+
+.list-item__img {
+  box-sizing: content-box;
+  width: 280rpx;
+  height: 198rpx;
+  line-height: 0;
+  background-color: #FFF;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.active-merchant-border {
+  border-top: 8rpx solid #C8141F;
+}
+
+.scr{
+  position: relative;
+  height: 100%
+}
+.item{
+  height: 55px;
+  border-bottom:1px solid #D3D3D3;
+}
+.item2{
+  height: 55px;
+  border-bottom:1px solid #D3D3D3;
+  background-color: #D3D3D3;
+}
+.item text{
+  margin-left: 15px;
+  position: relative;
+  bottom: 28rpx;
+  font-weight: normal;
+  font-size: 16px;
+}
+.imageone{
+  margin-left: 15rpx;
+  width: 80px;
+  height: 50px;
+}
+.imagetwo{
+  position: absolute; 
+  right: 30rpx;
+  height: 30px;
+  width: 30px;
+}
+
+.cover-img__container {
+  width: 70rpx;
+  height: 200rpx;
+  background: #FFF;
+  border-radius: 40rpx;
+  right: 35rpx;
+  padding: auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+}
+
+.loacte-record--has {
+  bottom: 675rpx;
+}
+
+.loacte-record--has-no {
+  bottom: 175rpx;
+}
+
+.cover-img_search_container,.cover-img_location_container {
+  width: auto;
+  height: auto;
+  align-items: center;
+  padding: 15rpx auto;
+  margin: 25rpx auto;
+}
+
+.cover-img_search {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 25rpx;
+  display: block;
+  margin: auto;
+}
+
+.cover-img_location {
+  width: 45rpx;
+  height: 65rpx;
+  line-height: 25rpx;
+  display: block;
+  margin: auto;
+}
+
+.cover-img_search {
+  margin-top: 10rpx;
+}

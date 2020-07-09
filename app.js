@@ -43,7 +43,8 @@ App({
     wx.BaaS.init('33e7030ec3ba6925056d')
     wx.BaaS.auth.loginWithWechat() // 静默登录
   },
-  globalData: {
-    userInfo: null
-  }
+  //设置全局数据
+  golbalData:{
+    categoryID:0
+  },
 })

@@ -15,6 +15,12 @@
       "provider": "wxc6b86e382a1e3294"
      }
  },
+
+ "permission": {
+  "scope.userLocation": {
+    "desc": "您的位置信息将用于小程序获取您的当前位置"
+  }
+ },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

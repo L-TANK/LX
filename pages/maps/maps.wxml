@@ -1,2 +1,78 @@
-<!--pages/maps/maps.wxml-->
-<text>pages/maps/maps.wxml</text>
+<!--pages/lbsIndex/lbsIndex.wxml-->
+<view class="lbs">
+  <view class="top-lbs">
+    <view class="top-lbs__items">
+      <scroll-view scroll-x="true">
+        <block wx:for="{{ categoryData }}" wx:key="true">
+          <view class="top-list-item" data-category="{{item}}" bindtap="categoryChange">
+            <view class="top-list-item__title {{ activeCategory == item ? 'active-top-border' : ''}}">{{ item }}</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+
+  <map
+    class="{{ isSpread ? 'map--has-merchant-list' : ''}}"
+    longitude="{{ coreLongitude }}"
+    latitude="{{ coreLatitude }}"
+    scale="{{ scale }}"
+    show-location
+    markers="{{ markers }}"
+    bindmarkertap="markerTap"
+    >
+  </map>
+  
+  <cover-view class="cover-img__container {{isSpread?'loacte-record--has':'loacte-record--has-no'}}">
+        <cover-view class="cover-img_search_container">
+            <cover-image bindtap="navigateToSearch" class="cover-img_search" lazyLoad="true" src="../../resource/icon/search.png"></cover-image>
+        </cover-view>
+        <cover-view class="cover-img_location_container">
+            <cover-image bindtap="getCoreLocation" class="cover-img_location" lazyLoad="true" src="../../resource/icon/locate.png"></cover-image>
+        </cover-view>
+    </cover-view>
+
+  <view class="lbs-merchants">
+    <view
+      class="lbs-merchants__record"
+      bindtap="switchMerchantsItems"
+    >
+      共有{{ merchantsData.length }}个{{ activeCategory }}
+      <view class="lbs-merchants__toggle iconfont {{ isSpread ? 'icon-spread-down':'icon-spread-up' }}"></view>
+    </view>
+    <view class="lbs-merchants__items" hidden="{{ !isSpread }}">
+    <!--竖向版本-->
+      <scroll-view class='scr' scroll-y="true" style='height:465rpx' scroll-top="{{scrollTop}}">
+        <block wx:for="{{merchantsData}}" wx:key="true" id="item" >    
+        <navigator id="{{ item.id }}" url="../lbsDetail/lbsDetail?id={{ item.id }}">
+        <view class="item {{item.display?'item2':''}}" data-index="{{index}}">
+          <image style='margin-top:2px' class='imageone' src="{{item.logo}}"></image>
+          <text>{{item.title}}</text>
+        </view> 
+         </navigator> 
+        </block> 
+      </scroll-view>
+    <!-- 注释为横向版本
+       <scroll-view
+        scroll-x="{{ true }}"
+        scroll-left="{{ scrollLeft }}"
+        scroll-with-animation="{{ true }}"
+        >
+        <block
+          class="lbs-merchants__item"
+          wx:for="{{ merchantsData }}" wx:key="true"
+        >
+          <navigator id="{{ item.id }}" class="list-item"  url="../lbsDetail/lbsDetail?id={{ item.id }}">
+            <view
+              class="list-item__img {{ index == activeMerchantIndex ? 'active-merchant-border' : ''}}"
+              style="background-image: url({{ item.logo }})"
+            ></view>
+
+            <view class="list-item__title">{{ item.title }} </view>
+          </navigator>
+        </block>
+      </scroll-view>
+      -->
+    </view>
+  </view>
+</view>

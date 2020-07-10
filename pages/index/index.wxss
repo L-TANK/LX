@@ -13,7 +13,7 @@ page{
   }
   
 .primay{            /*按钮布局*/
-  margin-top: 750rpx;        /*按钮垂直高度*/
+  margin-top: 850rpx;        /*按钮垂直高度*/
   border: 5px solid red;       /*边框粗细和颜色*/
   border-radius: 10px;         /*弧度*/
   padding: 10px 10px;      /*边框到内部字体间距*/
@@ -22,5 +22,7 @@ page{
 .primay-text{
   font-size: 50rpx;
 }
+
+
 
 

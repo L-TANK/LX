@@ -155,7 +155,7 @@ Page({
           let h1 = hou
           let m1 = (sec > 50? min + 1:min)
           let s1 = (sec > 50? sec - 50:sec + 10)
-          let str1 = (change[star_flag] == 1?'将靠近右转道的第一条直行道转为右转道':'将靠近直行道的第一条右转道转为直行道')
+          let str1 = (change[star_flag] == 1?'将2号道转为右转道':'将3号道转为直行道')
           that.setData({
             isChange:true,
             text:'该路口将于'+h1+':'+m1+':'+s1+str1,
@@ -180,7 +180,7 @@ Page({
         if(change[star_flag] != 0)//转换为0情况下不用变换也不需要提示
         {
           that.setData({
-            text:change[star_flag] == 1?'该路口目前将靠近右转道的第一条直行道转为右转道,请注意车道选择':'该路口目前将靠近直行道的第一条右转道转为直行道,请注意车道选择',
+            text:change[star_flag] == 1?'该路口目前将2号道转为右转道':'该路口目前将3号转为直行道',
             })    
         } 
         if(star_flag+1<star.length)

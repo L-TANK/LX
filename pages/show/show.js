@@ -24,6 +24,7 @@ Page({
     end:[],
     star_flag:0,
     end_flag:0,
+    img:'/resource/0.png'
   },
 
   /**
@@ -181,6 +182,7 @@ Page({
         {
           that.setData({
             text:change[star_flag] == 1?'该路口目前将2号道转为右转道':'该路口目前将3号转为直行道',
+            img:change[star_flag] == 1?'/resource/1.png':'/resource/2.png',
             })    
         } 
         if(star_flag+1<star.length)
@@ -199,6 +201,7 @@ Page({
           that.setData({
             text:'文明行车',
             isChange:false,
+            img:'/resource/0.png'
             }) 
         }
         if(end_flag+1<end.length)

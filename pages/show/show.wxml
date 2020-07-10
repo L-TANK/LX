@@ -8,8 +8,11 @@
     <text class="primay-text">{{button_text}}</text>
   </view>
   <view class="primay"> 
-    <text class="primay-{{isChange ? 'red':'green'}}">{{text}}</text>
-</view>
+    <text class="primay-{{isChange ? 'red':'green'}}">{{text}}\n</text>
+  </view>
+  <view class="primay">
+    <image class = "img" src="{{img}}"></image>
+  </view>
 </view>
 
 

@@ -14,7 +14,7 @@ page{
   
 .primay{            /*按钮布局*/
   margin-top: 750rpx;        /*按钮垂直高度*/
-  border: 5px solid #C8141F;       /*边框粗细和颜色*/
+  border: 5px solid red;       /*边框粗细和颜色*/
   border-radius: 10px;         /*弧度*/
   padding: 10px 10px;      /*边框到内部字体间距*/
 }

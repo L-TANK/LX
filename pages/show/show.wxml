@@ -8,7 +8,7 @@
     <text class="primay-text">{{button_text}}</text>
   </view>
   <view class="primay"> 
-    <text class="primay-green">文明行车</text>
+    <text class="primay-{{isChange ? 'red':'green'}}">{{text}}</text>
 </view>
 </view>
 

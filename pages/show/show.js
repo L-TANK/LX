@@ -17,6 +17,13 @@ Page({
     s:'00',
     stop:true,
     button_text:'开始',
+    text:'文明行车',
+    isChange:false,
+    change:[],
+    star:[],
+    end:[],
+    star_flag:0,
+    end_flag:0,
   },
 
   /**
@@ -33,8 +40,12 @@ Page({
     //指定recordID
     Map.get(id).then(res =>{
       //success
+      console.log(res.data)
       that.setData({
         title:res.data.title,
+        change:res.data.change,
+        star:res.data.star,
+        end:res.data.end,
       })
     },err =>{
       //err
@@ -97,9 +108,14 @@ Page({
     const that = this
     var hou = that.data.h
     var min = that .data.m
-    var sec = that.data.s   
+    var sec = that.data.s 
+    var change = that.data.change  
+    var star = that.data.star
+    var end = that.data.end
     setInterval(function(){
     let stop = that.data.stop
+    let star_flag = that.data.star_flag
+    let end_flag = that.data.end_flag
     if(!stop)
     {
       sec++
@@ -128,8 +144,73 @@ Page({
         s: (sec < 10? '0'+sec:sec)
         })
       }
+
+      //上为计时器，下为处理逻辑
+      let time = 10000 * hou + 100 * min + sec //时间转换
+      let ready_time = 10000 * hou + 100 * (sec > 50? min + 1:min) + (sec > 50? sec - 50:sec + 10) //时间-10s
+      
+      //转换预先提示
+      if(ready_time == star[star_flag] && change[star_flag] != 0)//转换为0情况下不用变换也不需要提示
+      {           
+          let h1 = hou
+          let m1 = (sec > 50? min + 1:min)
+          let s1 = (sec > 50? sec - 50:sec + 10)
+          let str1 = (change[star_flag] == 1?'将靠近右转道的第一条直行道转为右转道':'将靠近直行道的第一条右转道转为直行道')
+          that.setData({
+            isChange:true,
+            text:'该路口将于'+h1+':'+m1+':'+s1+str1,
+            })    
+      }
+      //恢复预先提示
+      let isChange = that.data.isChange
+      if(ready_time == end[end_flag] && isChange) //当准备到结束时间时，若当前变换了，则提示恢复
+      {       
+          let h2 = hou
+          let m2 = (sec > 50? min + 1:min)
+          let s2 = (sec > 50? sec - 50:sec + 10)
+          let str2 = '恢复正常通行'
+          that.setData({
+            isChange:true,
+            text:'该路口将于'+h2+':'+m2+':'+s2+str2,
+            })        
+      }
+      //转换提示
+      if(time == star[star_flag]) //当到转换时间时
+      {       
+        if(change[star_flag] != 0)//转换为0情况下不用变换也不需要提示
+        {
+          that.setData({
+            text:change[star_flag] == 1?'该路口目前将靠近右转道的第一条直行道转为右转道,请注意车道选择':'该路口目前将靠近直行道的第一条右转道转为直行道,请注意车道选择',
+            })    
+        } 
+        if(star_flag+1<star.length)
+        {
+          star_flag++
+          that.setData({
+            star_flag:star_flag,
+            }) 
+        }                           
+      }
+      //恢复提示
+      if(time == end[end_flag]) //当到恢复时间时
+      {       
+        if(isChange)
+        {
+          that.setData({
+            text:'文明行车',
+            isChange:false,
+            }) 
+        }
+        if(end_flag+1<end.length)
+        {
+          end_flag++
+          that.setData({
+            end_flag:end_flag,
+            })            
+        }                           
+      }
     }
-    
+
   },1000)  
   },
 

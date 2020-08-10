@@ -1,6 +1,4 @@
 /* pages/maps/maps.wxss */
-/* pages/lbsIndex/lbsIndex.wxss */
-
 /* 顶部地图分类导航 */
 
 .top-lbs {

@@ -174,6 +174,7 @@ Page({
     });
   },
 
+  //获取用户定位
   getCoreLocation: function() {
     var that = this;
     wx.getLocation({

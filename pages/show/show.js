@@ -3,7 +3,6 @@
 var config =  require('../../config/config')
 
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -50,8 +49,7 @@ Page({
       })
     },err =>{
       //err
-    })
-   
+    })  
   },
 
   /**
@@ -104,7 +102,7 @@ Page({
      
     };
   },
-
+  //计时器
   queryTime(){
     const that = this
     var hou = that.data.h
